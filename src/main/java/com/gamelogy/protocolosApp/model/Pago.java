@@ -1,4 +1,4 @@
 package com.gamelogy.protocolosApp.model;
 
-public class Usuarios {
+public class Pago {
 }
