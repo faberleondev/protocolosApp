@@ -1,13 +1,26 @@
 package com.gamelogy.protocolosApp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import org.springframework.boot.autoconfigure.web.WebProperties;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Entity(name = "Perfil")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
 @Table(name = "perfil")
 public class Perfil {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    @Column(name = "nombre")
+    private String nombrePerfil;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "protocolo_id", nullable = false)
+    private Protocolo protocolo;
 }
