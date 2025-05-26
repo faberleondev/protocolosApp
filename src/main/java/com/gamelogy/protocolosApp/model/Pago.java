@@ -18,14 +18,16 @@ public class Pago {
     private Long id;
 
     @Column(name = "fecha", nullable = false)
-    private String fechaDePago;
+    private String fecha;
 
     @Column(nullable = false)
     private Double monto;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "paciente_id", nullable = false)
     private Paciente paciente;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 }
