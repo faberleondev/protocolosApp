@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,14 +17,14 @@ public class Paciente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "fecha_nacimiento")
-    private LocalDate fechaNacimientoPaciente;
+    @Column(nullable = false)
+    private String nacimiento;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "protocolo_id", nullable = false)
     private Protocolo protocolo;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "kit_id")
+    @JoinColumn(name = "kit_id", nullable = false)
     private Kit kit;
 }

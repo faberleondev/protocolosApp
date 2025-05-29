@@ -18,8 +18,10 @@ public class Kit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column
     private String lote;
+
     @Column(name = "nombre", nullable = false)
     private String nombreKit;
 

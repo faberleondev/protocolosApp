@@ -22,15 +22,15 @@ public class Agenda {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "paciente_id")
+    @JoinColumn(name = "paciente_id", nullable = false)
     private Paciente paciente;
+
+    @Column(nullable = false)
+    private LocalDate fecha;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
-
-    @Column(nullable = false)
-    private LocalDate fecha;
 
     @Column(name = "google_evento_id")
     private String googleEventoId;

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cargar Paciente</title>
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+</head>
+<body>
+<h2>Nuevo Paciente</h2>
+
+<form hx-post="/pacientes" hx-target="#resultado" hx-swap="innerHTML">
+    <label>Año Nacimiento:</label>
+    <input type="time" name="nacimiento" required><br>
+
+    <label>Protocolo:</label>
+    <select name="protocoloId" required>
+        <th:block th:each="p : ${protocolos}">
+            <option th:value="${p.id}" th:text="${p.nombre}"></option>
+        </th:block>
+    </select><br>
+
+    <label>Kit:</label>
+    <select name="kitId">
+        <th:block th:each="k : ${kits}">
+            <option th:value="${k.id}" th:text="${k.nombre}"></option>
+        </th:block>
+    </select><br>
+
+    <button type="submit">Guardar</button>
+</form>
+
+<div id="resultado"></div>
+</body>
+</html>

@@ -9,5 +9,4 @@ public class ProtocolosAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProtocolosAppApplication.class, args);
 	}
-
 }

@@ -1,0 +1,25 @@
+spring:
+    application:
+        name: protocolosApp
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+    datasource:
+        url: jdbc:mysql://localhost:3306/protocolos_app
+        username: root
+        password: lfort3001
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    output:
+        ansi.enabled: always
+
+
+# Habilitar logs de Hibernate para ver las consultas SQL
+logging:
+    level:
+        org.hibernate.SQL: DEBUG
+        org:
+            hibernate:
+                orm:
+                    jdbc:
+                        bind: TRACE

@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,4 +22,7 @@ public class Protocolo {
 
     @Column(name = "nombre", nullable = false)
     private String nombreProtocolo;
+
+    @OneToMany(mappedBy = "protocolo")
+    private List<Paciente> pacientes = new ArrayList<>();
 }
