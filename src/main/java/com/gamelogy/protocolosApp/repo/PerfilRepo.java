@@ -1,4 +1,7 @@
 package com.gamelogy.protocolosApp.repo;
 
-public interface PerfilRepo {
+import com.gamelogy.protocolosApp.model.Perfil;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PerfilRepo extends JpaRepository<Perfil, Long> {
 }

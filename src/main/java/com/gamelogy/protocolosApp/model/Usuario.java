@@ -19,12 +19,12 @@ public class Usuario {
     private Long id;
 
     @Column(name = "nombre", nullable = false)
-    private String nombreUsuario;
+    private String nombre;
 
     @Enumerated(EnumType.STRING)
     @Column( name = "rol", nullable = false)
     private Rol rol;
 
     @Column(name = "email", nullable = false, unique = true)
-    private String emailUsuario;
+    private String email;
 }
